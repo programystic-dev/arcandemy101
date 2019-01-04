@@ -5,13 +5,14 @@ import * as constants from '../../styles/constants.js';
 export default generalStyles = StyleSheet.create({
   basic: {
     width: 250,
-    paddingTop: constants.padding.sm,
-    paddingBottom: constants.padding.sm,
+    paddingTop: constants.grid.sm,
+    paddingBottom: constants.grid.sm,
     borderRadius: 100,
   },
   basicText: {
-    textAlign: 'center',
     color: '#fff',
+    fontSize: 14,
+    textAlign: 'center',
   },
   default: {
     backgroundColor: constants.colors.primary,

@@ -12,7 +12,7 @@ export const colors  = {
   facebook: '#3b5998',
 }
 
-export const padding = {
+export const grid = {
   xs: 10,
   sm: 15,
   md: 20,
