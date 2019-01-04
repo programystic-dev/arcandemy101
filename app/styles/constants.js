@@ -9,10 +9,12 @@ export const colors  = {
   primary: '#492F54',
   secondary: '#7F5D91',
   tertiary: '#EDE1F4',
+  facebook: '#3b5998',
 }
 
 export const padding = {
-  sm: 10,
+  xs: 10,
+  sm: 15,
   md: 20,
   lg: 30,
   xl: 40,
