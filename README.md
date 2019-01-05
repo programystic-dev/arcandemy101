@@ -10,10 +10,10 @@ Basic tools:
 * Firebase
 
 ## Progress
-###Done
+### Done
 ✔️ Added react-navigation
 
-###TODO
+### TODO
 * Style App Drawer.
 * Add Pages in Chapters.
 * Add Firebase registration and add Redux.
