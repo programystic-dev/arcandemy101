@@ -3,7 +3,8 @@ import { Image, Text, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import * as constants from '../../../styles/constants.js';
 import ThemeButton from '../../../components/Button/Button.js';
-import ThemeInput from '../../../components/TextInput/TextInput';
+import ThemeInput from '../../../components/TextInput/TextInput.js';
+import ThemeLink from '../../../components/Link/Link.js';
 
 const Login = () => (
   <View style={[styles.container, styles.darkBackground]}>
@@ -16,7 +17,7 @@ const Login = () => (
     <ThemeButton onPress={() => console.log("Logged with FB!")} theme="facebook" text="Facebook" style={{marginBottom: constants.grid.sm}}/>
 
     <Text style={styles.lightTextColor}>Don't have an account?</Text>
-    <Text style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]}>Sign up here!</Text>
+    <ThemeLink onPress={() => console.log("Link clicked!")} style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
   </View>
 );
 
