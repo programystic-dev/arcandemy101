@@ -7,6 +7,8 @@ import HomeStack from './HomeNavigator.js';
 const AppDrawer = createDrawerNavigator({
   Home: HomeStack,
   Chapter: ChapterStack,
+}, {
+  initialRouteName: 'Home',
 })
 
 export default AppDrawer;
