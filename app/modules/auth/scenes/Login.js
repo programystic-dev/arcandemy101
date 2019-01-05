@@ -14,7 +14,7 @@ const Login = () => (
     <ThemeInput value="Password" style={{marginBottom: constants.grid.xl}} />
 
     <ThemeButton onPress={() => console.log("Logged!")} text="Login" style={{marginBottom: constants.grid.sm}} />
-    <ThemeButton onPress={() => console.log("Logged with FB!")} theme="facebook" text="Facebook" style={{marginBottom: constants.grid.sm}}/>
+    <ThemeButton onPress={() => console.log("Logged with FB!")} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 
     <Text style={styles.lightTextColor}>Don't have an account?</Text>
     <ThemeLink onPress={() => console.log("Link clicked!")} style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
