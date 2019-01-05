@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
-import PropTypes from 'prop-types';
 import styles from './styles.js';
 
 class ThemeInput extends Component {
@@ -42,14 +41,3 @@ class ThemeInput extends Component {
 }
 
 export default ThemeInput;
-
-ThemeInput.propTypes = {
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  onFocusColor: PropTypes.object,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-}
-
-ThemeInput.defaultProps = {
-}
