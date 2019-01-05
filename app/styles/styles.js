@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import * as constants from './constants.js';
 
 export default generalStyles = StyleSheet.create({
+  //Containers
   container: {
     flex: 1,
     alignItems: 'center',
@@ -31,14 +32,7 @@ export default generalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationStyle: "solid",
   },
-  //Input
-  input: {
-    height: 40,
-    width:250,
-    marginBottom: constants.grid.sm,
-    fontSize: 14,
-    color: constants.colors.primary,
-    borderBottomColor: constants.colors.primary,
-    borderBottomWidth: 1,
+  inputWrappper: {
+    flex: 1,
   }
 });
