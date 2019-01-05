@@ -11,10 +11,10 @@ Basic tools:
 
 ## Progress
 ### Done
-✔️ Created basic components (Button, TextInput, Link) and modules (auth, home).
-✔️ Added Login and Signup scenes for auth module.
-✔️ Added react-navigation (navigator module).
-✔️ Added Chapter and Page scenes in chapters module.
+✔️ Created basic components (Button, TextInput, Link) and modules (auth, home). <br />
+✔️ Added Login and Signup scenes for auth module. <br />
+✔️ Added react-navigation (navigator module). <br />
+✔️ Added Chapter and Page scenes in chapters module. <br />
 
 ### TODO
 * Style App Drawer.
