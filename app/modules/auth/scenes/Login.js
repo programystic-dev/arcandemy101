@@ -6,18 +6,18 @@ import ThemeButton from '../../../components/Button/Button.js';
 import ThemeInput from '../../../components/TextInput/TextInput.js';
 import ThemeLink from '../../../components/Link/Link.js';
 
-const Login = () => (
+const Login = ({navigation}) => (
   <View style={[styles.container, styles.darkBackground]}>
     <Image source={require('../../../assets/img/logo.png')} style={{width: 50, height: 50, marginBottom: constants.grid.md}} />
 
     <ThemeInput value="Email" style={{marginBottom: constants.grid.sm}} />
     <ThemeInput value="Password" style={{marginBottom: constants.grid.xl}} />
 
-    <ThemeButton onPress={() => console.log("Logged!")} text="Login" style={{marginBottom: constants.grid.sm}} />
-    <ThemeButton onPress={() => console.log("Logged with FB!")} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
+    <ThemeButton onPress={() => navigation.navigate('App')} text="Login" style={{marginBottom: constants.grid.sm}} />
+    <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 
     <Text style={styles.lightTextColor}>Don't have an account?</Text>
-    <ThemeLink onPress={() => console.log("Link clicked!")} style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
+    <ThemeLink onPress={() => navigation.navigate('Signup')} style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
   </View>
 );
 
