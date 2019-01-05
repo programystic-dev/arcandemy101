@@ -32,7 +32,4 @@ export default generalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationStyle: "solid",
   },
-  inputWrappper: {
-    flex: 1,
-  }
 });
