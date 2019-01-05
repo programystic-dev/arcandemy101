@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator} from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import * as constants from '../../styles/constants.js';
 
 import LoginScreen from '../auth/scenes/Login.js';
