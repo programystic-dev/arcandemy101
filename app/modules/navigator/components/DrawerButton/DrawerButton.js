@@ -1,10 +1,14 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
+import styles from './style.js';
 
 const MenuButton = ({ navigation }) => (
 	<View>
 		<TouchableOpacity onPress={() => navigation.openDrawer()}>
-			<Text>B</Text>
+			<Image
+			  source={require('../../../../assets/img/menu.png')}
+				style={styles.drawerButton}
+			/>
 		</TouchableOpacity>
 	</View>
 );
