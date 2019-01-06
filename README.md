@@ -15,9 +15,9 @@ Basic tools:
 ✔️ Added Login and Signup scenes for auth module. <br />
 ✔️ Added react-navigation (navigator module). <br />
 ✔️ Added Chapter and Page scenes in chapters module. <br />
+✔️ Style App Drawer. <br />
 
 ### TODO
-* Style App Drawer.
 * Add Firebase registration and add Redux.
 * [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
 * Create Navigator dynamically for Chapters.
