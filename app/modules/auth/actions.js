@@ -1,20 +1,18 @@
-import {auth, database, provider} from "../../config/firebase";
+import { auth } from "../../config/firebase";
 import * as types from './actionTypes';
 
 export function register(email, password) {
-  return (dispatch) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    auth.createUserWithEmailAndPassword(email, password)
     .then((resp) => {
-      console.log('User created:' + resp);
+      console.log('User created!');
     }).catch(function(error) {
       console.log(error.message);
     });
-  }
 }
 
 export function login(email, password) {
   return (dispatch) => {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    auth.signInWithEmailAndPassword(email, password)
     .then((resp) => {
       let { user } = resp;
       console.log('User logged in:' + user);
