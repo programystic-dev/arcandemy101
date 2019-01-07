@@ -19,10 +19,11 @@ Basic tools:
 
 ### TODO
 * Add Firebase registration and add Redux.
-* [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
+* Add field verification.
 * Create Navigator dynamically for Chapters.
-* Add Chapters logic (block next Chapter unless current is finished)
-* Add Forgot Password scene in auth module
+* [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
+* Add Chapters logic (block next Chapter unless current is finished and change Main Altar image).
+* Add Forgot Password scene in auth module.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br />
