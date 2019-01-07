@@ -23,3 +23,9 @@ Basic tools:
 * Create Navigator dynamically for Chapters.
 * Add Chapters logic (block next Chapter unless current is finished)
 * Add Forgot Password scene in auth module
+
+## Current views
+![Login and registration](./assets/1.png) <br />
+![Main screen and drawer menu](./assets/2.png) <br />
+![Chapter and page screens](./assets/3.png) <br />
+![Settings](./assets/4.png) <br />
