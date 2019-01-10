@@ -26,6 +26,8 @@ Basic tools:
 * [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
 * Add Chapters logic (block next Chapter unless current is finished and change Main Altar image).
 * Add Forgot Password scene in auth module.
+* Add username in Firebase.
+* Add user's Chapters progress in Firebase.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br />
