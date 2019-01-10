@@ -32,4 +32,11 @@ export default generalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationStyle: "solid",
   },
+  errorMessage: {
+    width: 300,
+    color: '#fff',
+    textAlign: 'center',
+    opacity: 0.9,
+    marginBottom: constants.grid.lg,
+  }
 });
