@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import * as constants from "./constants"
+import * as constants from './constants';
 
 // Initialize Firebase
 const config = {

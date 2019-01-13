@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Image, Text, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import * as constants from '../../../styles/constants.js';
@@ -52,7 +51,7 @@ class Signup extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     register: (user) => {
       dispatch(register(user))

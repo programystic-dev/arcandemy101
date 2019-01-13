@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Image, Text, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import * as constants from '../../../styles/constants.js';
@@ -9,6 +8,7 @@ import ThemeInput from '../../../components/TextInput/TextInput.js';
 import ThemeLink from '../../../components/Link/Link.js';
 import { login } from '../actionCreators.js';
 import { loginUser } from '../api.js';
+import store from '../../../redux/store.js';
 
 class Login extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class Login extends Component {
         {isError &&
           <Text style={styles.errorMessage}>{errorMessage}</Text>
         }
-
+ <Text>Is user logged in: {JSON.stringify(store.getState().isLoggedIn)}</Text>
         <ThemeButton onPress={() => this.handleLogin(email, password, navigation)} text="Login" style={{marginBottom: constants.grid.sm}} />
         <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 
@@ -57,7 +57,7 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     login: (user) => {
       dispatch(login(user))

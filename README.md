@@ -16,18 +16,18 @@ Basic tools:
 ✔️ Added react-navigation (navigator module). <br />
 ✔️ Added Chapter and Page scenes in chapters module. <br />
 ✔️ Style App Drawer. <br />
-✔️ Add Firebase login, registration and add Redux. <br />
+✔️ Add Firebase login, registration and add Redux actions (login, logout, register). <br />
 
 ### TODO
 * Add field validation in auth module.
 * Add AsyncStorage.
-* Add logout.
+* Add Facebook login and signup.
 * Create Navigator dynamically for Chapters.
 * [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
-* Add Chapters logic (block next Chapter unless current is finished and change Main Altar image).
+* Add Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter).
 * Add Forgot Password scene in auth module.
 * Add username in Firebase.
-* Add user's Chapters progress in Firebase.
+* Add user's Chapter progress in Firebase.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br />
