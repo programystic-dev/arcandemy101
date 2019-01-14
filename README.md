@@ -17,10 +17,10 @@ Basic tools:
 ✔️ Added Chapter and Page scenes in chapters module. <br />
 ✔️ Style App Drawer. <br />
 ✔️ Add Firebase login, registration and add Redux actions (login, logout, register). <br />
+✔️ Add AsyncStorage. <br />
 
 ### TODO
 * Add field validation in auth module.
-* Add AsyncStorage.
 * Add Facebook login and signup.
 * Create Navigator dynamically for Chapters.
 * [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
