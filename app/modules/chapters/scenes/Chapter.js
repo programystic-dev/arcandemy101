@@ -12,9 +12,9 @@ const Chapter = ({ navigation }) => (
     <Text style={[styles.textColor]}>{chapter.title}</Text>
     <FlatList
       data={pages}
-      renderItem={({item}) => <Text key={item.id}>{item.title}</Text>}
+      renderItem={({item}) => <ThemeButton onPress={() => navigation.navigate('Page', {item: item})} text={item.title} />}
+      keyExtractor={(item) => item.id.toString()}
     />
-    <ThemeButton onPress={() => navigation.navigate('Page')} text="Page" />
   </View>
 );
 
