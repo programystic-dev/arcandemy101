@@ -28,7 +28,7 @@ const AppDrawer = createDrawerNavigator({
     },
   },
 }, {
-  initialRouteName: 'Home',
+  initialRouteName: 'Chapter',
   drawerBackgroundColor: constants.colors.primary,
   contentOptions: {
     activeTintColor: '#fff',

@@ -1,0 +1,35 @@
+{
+  "chapters": [
+    {
+      "id": 0,
+      "title": "Chapter One",
+      "isRead": true,
+      "pages" : [
+        {
+          "id": 0,
+          "title": "Page One",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Page Two",
+          "content": [
+            { "text": "Text 2.1" },
+            { "text": "Text 2.2"}
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Page Three",
+          "content": [
+            { "text": "Text 3.1" },
+            { "text": "Text 3.2"}
+          ]
+        }
+      ]
+    }
+  ]
+}
