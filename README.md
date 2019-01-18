@@ -18,12 +18,12 @@ Basic tools:
 ✔️ Style App Drawer. <br />
 ✔️ Add Firebase login, registration and add Redux actions (login, logout, register). <br />
 ✔️ Add AsyncStorage. <br />
+✔️ Add List of Pages for Chapters and pass info from JSON file <br />
 
 ### TODO
 * Add field validation in auth module.
 * Add Facebook login and signup.
 * Create Navigator dynamically for Chapters.
-* [Render HTML in Pages](https://stackoverflow.com/questions/29334984/render-html-in-react-native).
 * Add Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter).
 * Add Forgot Password scene in auth module.
 * Add username in Firebase.
