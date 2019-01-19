@@ -2,7 +2,7 @@
   "chapters": [
     {
       "id": 0,
-      "title": "Chapter One",
+      "title": "Magic",
       "isRead": true,
       "pages" : [
         {
@@ -30,6 +30,21 @@
           ]
         }
       ]
+    }, {
+      "id": 1,
+      "title": "Witch",
+      "isRead": true,
+      "pages": []
+    }, {
+      "id": 2,
+      "title": "Correspondences",
+      "isRead": true,
+      "pages": []
+    }, {
+      "id": 3,
+      "title": "Altar",
+      "isRead": true,
+      "pages": []
     }
   ]
 }

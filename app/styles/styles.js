@@ -14,7 +14,7 @@ export default generalStyles = StyleSheet.create({
   darkBackground: {
     backgroundColor: constants.colors.secondary,
   },
-  //Text
+  //Text Formating
   textColor: {
     color: constants.colors.primary,
     textDecorationColor: constants.colors.primary,
@@ -31,6 +31,21 @@ export default generalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationStyle: "solid",
   },
+  //Headers
+  header1: {
+    fontSize: 28,
+  },
+  //Magrins
+  bottomSm: {
+    marginBottom: constants.grid.sm,
+  },
+  bottomMd: {
+    marginBottom: constants.grid.md,
+  },
+  bottomLg: {
+    marginBottom: constants.grid.lg,
+  },
+  //Errors
   errorMessage: {
     width: 300,
     color: '#fff',
