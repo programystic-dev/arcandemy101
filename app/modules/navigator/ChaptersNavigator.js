@@ -6,7 +6,10 @@ import ChapterScreen from '../chapters/scenes/Chapter.js';
 import PageScreen from '../chapters/scenes/Page.js';
 
 const ChapterStack = createStackNavigator({
-  Chapter: ChapterScreen,
+  Chapter: {
+    screen: ChapterScreen,
+    params: props => JSON.stringify(props)
+  },
   Page: PageScreen,
 }, {
   defaultNavigationOptions: {

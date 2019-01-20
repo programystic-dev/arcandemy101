@@ -8,7 +8,7 @@ const RootNavigator = createSwitchNavigator({
   Auth: AuthStack,
   App: AppDrawer,
 }, {
-  initialRouteName: 'Auth',
+  initialRouteName: 'App',
 })
 
 export default createAppContainer(RootNavigator);
