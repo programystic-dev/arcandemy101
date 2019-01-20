@@ -28,6 +28,24 @@ const AppDrawer = createDrawerNavigator({
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
     },
   },
+  Crystals: {
+    screen: ChapterStack,
+    navigationOptions: {
+      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+    },
+  },
+  Herbs: {
+    screen: ChapterStack,
+    navigationOptions: {
+      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+    },
+  },
+  Divination: {
+    screen: ChapterStack,
+    navigationOptions: {
+      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+    },
+  },
   Settings: {
     screen: SettingsStack,
     navigationOptions: {
