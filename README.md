@@ -34,6 +34,5 @@ Basic tools:
 
 The picture on the main screen changes with user's progress (new items are added to the cauldron).
 To access the next Chapter user has to finish reading the current Chapter (blocked Chapters have a locker in the Drawer Menu while unlocked ones are marked with a key).
-![Main screen and drawer menu](./assets/2.png) <br />
-![Chapter and page screens](./assets/3.png) <br />
+
 ![Settings](./assets/4.png) <br />
