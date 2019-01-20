@@ -11,7 +11,7 @@ export default generalStyles = StyleSheet.create({
   },
   basicText: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: 18,
     textAlign: 'center',
   },
   default: {

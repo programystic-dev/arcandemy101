@@ -31,6 +31,18 @@ export default generalStyles = StyleSheet.create({
     textDecorationLine: 'underline',
     textDecorationStyle: "solid",
   },
+  text16: {
+    fontSize: 16,
+  },
+  text18: {
+    fontSize: 18,
+  },
+  text20: {
+    fontSize: 20,
+  },
+  text24: {
+    fontSize: 24,
+  },
   //Headers
   header1: {
     fontSize: 28,
@@ -44,6 +56,11 @@ export default generalStyles = StyleSheet.create({
   },
   bottomLg: {
     marginBottom: constants.grid.lg,
+  },
+  //Images
+  image: {
+    width: 200,
+    height: 246,
   },
   //Errors
   errorMessage: {
