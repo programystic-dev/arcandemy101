@@ -7,7 +7,7 @@
       "pages" : [
         {
           "id": 0,
-          "title": "Page One",
+          "title": "Book of Shadows",
           "content": [
             { "text": "Text 1" },
             { "text": "Text 2"}
@@ -15,7 +15,7 @@
         },
         {
           "id": 1,
-          "title": "Page Two",
+          "title": "Wand",
           "content": [
             { "text": "Text 2.1" },
             { "text": "Text 2.2"}
@@ -23,7 +23,15 @@
         },
         {
           "id": 2,
-          "title": "Page Three",
+          "title": "Broom",
+          "content": [
+            { "text": "Text 3.1" },
+            { "text": "Text 3.2"}
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Candles",
           "content": [
             { "text": "Text 3.1" },
             { "text": "Text 3.2"}

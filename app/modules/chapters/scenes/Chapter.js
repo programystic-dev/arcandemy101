@@ -8,10 +8,8 @@ const chapter = data.chapters[0];
 const pages = data.chapters[0].pages;
 
 const Chapter = ({ navigation }) => (
-  <View style={[styles.container, styles.lightBackground]}>
+  <View style={[styles.container, styles.lightBackground, {paddingTop: 100}]}>
     <Text style={[styles.textColor, styles.header1, styles.bottomMd]}>{chapter.title}</Text>
-    <Text style={styles.textColor}>{console.log(navigation) && JSON.stringify(navigation.getParam('title'))}</Text>
-    <Text style={styles.textColor}>{JSON.stringify(navigation.dangerouslyGetParent().state.params.title)}</Text>
     <FlatList
       data={pages}
       renderItem={({item}) => <ThemeButton onPress={() => navigation.navigate('Page', {item: item})} text={item.title} style={styles.bottomSm}/>}

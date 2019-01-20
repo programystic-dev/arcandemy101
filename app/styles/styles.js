@@ -33,6 +33,7 @@ export default generalStyles = StyleSheet.create({
   },
   text16: {
     fontSize: 16,
+    lineHeight: 22,
   },
   text18: {
     fontSize: 18,
@@ -60,7 +61,7 @@ export default generalStyles = StyleSheet.create({
   //Images
   image: {
     width: 200,
-    height: 246,
+    height: 200,
   },
   //Errors
   errorMessage: {

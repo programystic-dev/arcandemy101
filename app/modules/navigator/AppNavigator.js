@@ -15,17 +15,17 @@ const AppDrawer = createDrawerNavigator({
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
     },
   },
-  Chapter1: {
+  Altar: {
     screen: ChapterStack,
     params: {title: 'Some title'},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
     },
   },
-  Chapter2: {
+  Correspondences: {
     screen: ChapterStack,
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
+      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
     },
   },
   Settings: {
