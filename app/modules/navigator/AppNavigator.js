@@ -7,46 +7,47 @@ import DrawerItemIcon from './components/DrawerItemIcon/DrawerItemIcon.js';
 import ChapterStack from './ChaptersNavigator.js';
 import HomeStack from './HomeNavigator.js';
 import SettingsStack from './SettingsNavigator.js';
+import data from '../../assets/data.json';
 
 const AppDrawer = createDrawerNavigator({
   Home: {
     screen: HomeStack,
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
     },
   },
   Magic: {
     screen: ChapterStack,
     params: {chapterId: 0},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[0].isLocked} />),
     },
   },
   Witch: {
     screen: ChapterStack,
     params: {chapterId: 1},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[1].isLocked} />),
     },
   },
   Correspondences: {
     screen: ChapterStack,
     params: {chapterId: 2},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[2].isLocked} />),
     },
   },
   Altar: {
     screen: ChapterStack,
     params: {chapterId: 3},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[3].isLocked} />),
     },
   },
   Settings: {
     screen: SettingsStack,
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
     },
   },
 }, {
