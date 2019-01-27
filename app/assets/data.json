@@ -1,0 +1,93 @@
+{
+  "chapters": [
+    {
+      "id": 0,
+      "title": "Magic",
+      "isRead": true,
+      "pages" : [
+        {
+          "id": 0,
+          "isRead": false,
+          "title": "How Magic works?",
+          "pageImg": "cauldron",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        }
+      ]
+    }, {
+      "id": 1,
+      "title": "Witch",
+      "isRead": true,
+      "pages": [
+        {
+          "id": 0,
+          "isRead": false,
+          "title": "Book of Shadows",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        }
+      ]
+    }, {
+      "id": 2,
+      "title": "Correspondences",
+      "isRead": true,
+      "pages": [
+        {
+          "id": 0,
+          "isRead": false,
+          "title": "Book of Shadows",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        }
+      ]
+    }, {
+      "id": 3,
+      "title": "Altar",
+      "isRead": true,
+      "pages": [
+        {
+          "id": 0,
+          "isRead": false,
+          "title": "Book of Shadows",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 1,
+          "isRead": false,
+          "title": "Wand",
+          "content": [
+            { "text": "Text 2.1" },
+            { "text": "Text 2.2"}
+          ]
+        },
+        {
+          "id": 2,
+          "isRead": false,
+          "title": "Broom",
+          "content": [
+            { "text": "Text 3.1" },
+            { "text": "Text 3.2"}
+          ]
+        },
+        {
+          "id": 3,
+          "isRead": false,
+          "title": "Candles",
+          "content": [
+            { "text": "Text 3.1" },
+            { "text": "Text 3.2"}
+          ]
+        }
+      ]
+    }
+  ]
+}

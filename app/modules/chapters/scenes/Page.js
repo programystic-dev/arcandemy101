@@ -3,13 +3,16 @@ import { Image, Text, View } from 'react-native';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import { grid } from '../../../styles/constants.js';
+import images from '../../../assets/img/images.js';
 
 const Page = ({ navigation }) => {
   const item = navigation.getParam('item', 'Error');
 
   return(
     <View style={[styles.container, styles.lightBackground]}>
-      <Image source={ require('../../../assets/img/broomstick.png') } style={[styles.bottomLg, styles.image]}/>
+      { images[item.pageImg] != null &&
+        <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
+      }
       <Text style={[styles.textColor, styles.header1]}>{item.title}</Text>
       <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit,

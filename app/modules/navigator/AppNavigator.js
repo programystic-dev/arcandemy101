@@ -15,33 +15,30 @@ const AppDrawer = createDrawerNavigator({
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
     },
   },
-  Altar: {
+  Magic: {
     screen: ChapterStack,
-    params: {title: 'Some title'},
+    params: {chapterId: 0},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/key.png")} />),
     },
   },
+  Witch: {
+    screen: ChapterStack,
+    params: {chapterId: 1},
+    navigationOptions: {
+      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
+    },
+  },
   Correspondences: {
     screen: ChapterStack,
+    params: {chapterId: 2},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
     },
   },
-  Crystals: {
+  Altar: {
     screen: ChapterStack,
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
-    },
-  },
-  Herbs: {
-    screen: ChapterStack,
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
-    },
-  },
-  Divination: {
-    screen: ChapterStack,
+    params: {chapterId: 3},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon iconLink={require("../../assets/img/locker.png")} />),
     },
