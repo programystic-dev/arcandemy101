@@ -3,7 +3,6 @@ import { Button, FlatList, Text, View } from 'react-native';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
-import storage from '../../../config/firebase';
 
 const Chapter = ({ navigation }) => {
   const chapterId = navigation.dangerouslyGetParent().state.params.chapterId;
