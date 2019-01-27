@@ -14,7 +14,7 @@ const Chapter = ({ navigation }) => {
       <Text style={[styles.textColor, styles.header1, styles.bottomMd]}>{chapter.title}</Text>
       <FlatList
         data={pages}
-        renderItem={({item}) => <ThemeButton onPress={() => navigation.navigate('Page', {item: item})} text={item.title} style={styles.bottomSm}/>}
+        renderItem={({item}) => <ThemeButton onPress={() => navigation.navigate('Page', {item: item, chapterId: chapterId})} text={item.title} style={styles.bottomSm}/>}
         keyExtractor={(item) => item.id.toString()}
       />
     </View>

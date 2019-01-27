@@ -3,10 +3,13 @@ import { Image, Text, View } from 'react-native';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import { grid } from '../../../styles/constants.js';
+import data from '../../../assets/data.json';
 import images from '../../../assets/img/images.js';
 
 const Page = ({ navigation }) => {
   const item = navigation.getParam('item', 'Error');
+  const chapterId = navigation.getParam('chapterId', 'Error');
+  const chapter = data.chapters[chapterId];
 
   return(
     <View style={[styles.container, styles.lightBackground]}>
@@ -23,7 +26,15 @@ const Page = ({ navigation }) => {
       pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
       culpa qui officia deserunt mollit anim id est laborum.
       </Text>
-      <ThemeButton onPress={() => console.log("Taped!")} text="Next: Candles" />
+
+      { (item.id + 1) < chapter.pages.length &&
+        <ThemeButton onPress={() => navigation.navigate('Page', {item: chapter.pages[(item.id + 1)], chapterId: chapterId})} text={`Next: ${chapter.pages[(item.id + 1)].title}`} style={styles.bottomSm}/>
+      }
+
+      { (item.id + 1) == chapter.pages.length &&
+        <ThemeButton onPress={() => navigation.navigate('Chapter')} text='Finish Chapter' style={styles.bottomSm}/>
+      }
+
     </View>
   )
 }
