@@ -2,13 +2,13 @@
   "chapters": [
     {
       "id": 0,
-      "title": "Magic",
+      "title": "Correspondences",
       "isLocked": false,
       "pages" : [
         {
           "id": 0,
           "isRead": false,
-          "title": "How Magic works?",
+          "title": "Elements",
           "pageImg": "cauldron",
           "content": [
             { "text": "Text 1" },
@@ -18,7 +18,27 @@
         {
           "id": 1,
           "isRead": false,
-          "title": "What is Energy?",
+          "title": "Days",
+          "pageImg": "broomstick",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 2,
+          "isRead": false,
+          "title": "Colors",
+          "pageImg": "broomstick",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 3,
+          "isRead": false,
+          "title": "Planets",
           "pageImg": "broomstick",
           "content": [
             { "text": "Text 1" },
@@ -28,36 +48,6 @@
       ]
     }, {
       "id": 1,
-      "title": "Witch",
-      "isLocked": true,
-      "pages": [
-        {
-          "id": 0,
-          "isRead": false,
-          "title": "Book of Shadows",
-          "content": [
-            { "text": "Text 1" },
-            { "text": "Text 2"}
-          ]
-        }
-      ]
-    }, {
-      "id": 2,
-      "title": "Correspondences",
-      "isLocked": true,
-      "pages": [
-        {
-          "id": 0,
-          "isRead": false,
-          "title": "Book of Shadows",
-          "content": [
-            { "text": "Text 1" },
-            { "text": "Text 2"}
-          ]
-        }
-      ]
-    }, {
-      "id": 3,
       "title": "Altar",
       "isLocked": true,
       "pages": [
@@ -73,7 +63,76 @@
         {
           "id": 1,
           "isRead": false,
+          "title": "Cauldron",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 2,
+          "isRead": false,
+          "title": "Athame",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 3,
+          "isRead": false,
+          "title": "Candle",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 4,
+          "isRead": false,
           "title": "Wand",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 5,
+          "isRead": false,
+          "title": "Broom",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 6,
+          "isRead": false,
+          "title": "Chalice",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        }
+      ]
+    }, {
+      "id": 2,
+      "title": "Divination",
+      "isLocked": true,
+      "pages": [
+        {
+          "id": 0,
+          "isRead": false,
+          "title": "Tasseomancy",
+          "content": [
+            { "text": "Text 1" },
+            { "text": "Text 2"}
+          ]
+        },
+        {
+          "id": 1,
+          "isRead": false,
+          "title": "Skrying",
           "content": [
             { "text": "Text 2.1" },
             { "text": "Text 2.2"}
@@ -82,7 +141,7 @@
         {
           "id": 2,
           "isRead": false,
-          "title": "Broom",
+          "title": "Cartomancy",
           "content": [
             { "text": "Text 3.1" },
             { "text": "Text 3.2"}
@@ -91,7 +150,16 @@
         {
           "id": 3,
           "isRead": false,
-          "title": "Candles",
+          "title": "Palmistry",
+          "content": [
+            { "text": "Text 3.1" },
+            { "text": "Text 3.2"}
+          ]
+        },
+        {
+          "id": 4,
+          "isRead": false,
+          "title": "Runes",
           "content": [
             { "text": "Text 3.1" },
             { "text": "Text 3.2"}

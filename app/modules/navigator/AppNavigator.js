@@ -16,32 +16,25 @@ const AppDrawer = createDrawerNavigator({
       drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
     },
   },
-  Magic: {
+  Correspondences: {
     screen: ChapterStack,
     params: {chapterId: 0},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[0].isLocked} />),
     },
   },
-  Witch: {
+  Altar: {
     screen: ChapterStack,
     params: {chapterId: 1},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[1].isLocked} />),
     },
   },
-  Correspondences: {
+  Divination: {
     screen: ChapterStack,
     params: {chapterId: 2},
     navigationOptions: {
       drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[2].isLocked} />),
-    },
-  },
-  Altar: {
-    screen: ChapterStack,
-    params: {chapterId: 3},
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[3].isLocked} />),
     },
   },
   Settings: {
