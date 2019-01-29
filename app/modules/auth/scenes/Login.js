@@ -46,7 +46,7 @@ class Login extends Component {
         {isError &&
           <Text style={styles.errorMessage}>{errorMessage}</Text>
         }
- <Text>Is user logged in: {JSON.stringify(store.getState().isLoggedIn)}</Text>
+        <Text>Is user logged in: {JSON.stringify(store.getState().isLoggedIn)}</Text>
         <ThemeButton onPress={() => this.handleLogin(email, password, navigation)} text="Login" style={{marginBottom: constants.grid.sm}} />
         <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 

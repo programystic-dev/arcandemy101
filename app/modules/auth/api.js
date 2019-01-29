@@ -1,25 +1,39 @@
-import { auth } from '../../config/firebase.js';
+import { auth, database } from '../../config/firebase.js';
 
 export const loginUser = (email, password) => {
   return new Promise((resolve, reject) => {
     auth.signInWithEmailAndPassword(email, password)
-      .then(response => response.user)
-      .then(user => {
-        resolve(user);
-      }).catch(function(error) {
-        reject(error);
-      });
+      .then(resp => {
+        database.ref('users').child(resp.user.uid).once('value')
+          .then(snapshot => {
+            if (snapshot.val() !== null) {
+              let user = snapshot.val();
+              resolve(user);
+            }
+          }).catch((error) => reject(error));
+      }).catch((error) => reject({message: error}));
   });
 }
 
 export const registerUser = (email, password) => {
   return new Promise((resolve, reject) => {
     auth.createUserWithEmailAndPassword(email, password)
-      .then(response => response.user)
-      .then(user => {
-        resolve(user);
+      .then(resp => {
+        let user = {email, uid: resp.user.uid, test: 'test'}
+        createUser(user)
+          .then(resolve(user))
+          .catch((error) => reject({message: error}));
       }).catch(function(error) {
         reject(error);
       });
+  });
+}
+
+export function createUser(user) {
+  return new Promise((resolve, reject) => {
+    const userRef = database.ref().child('users');
+    userRef.child(user.uid).update({...user})
+      .then(() => { resolve(user); })
+      .catch((error) => reject({message: error}));
   });
 }
