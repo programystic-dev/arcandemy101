@@ -3,7 +3,6 @@
     {
       "id": 0,
       "title": "Magic",
-      "isRead": true,
       "isLocked": false,
       "pages" : [
         {
@@ -30,7 +29,6 @@
     }, {
       "id": 1,
       "title": "Witch",
-      "isRead": false,
       "isLocked": true,
       "pages": [
         {
@@ -46,7 +44,6 @@
     }, {
       "id": 2,
       "title": "Correspondences",
-      "isRead": false,
       "isLocked": true,
       "pages": [
         {
@@ -62,7 +59,6 @@
     }, {
       "id": 3,
       "title": "Altar",
-      "isRead": false,
       "isLocked": true,
       "pages": [
         {
