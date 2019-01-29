@@ -15,10 +15,11 @@ Basic tools:
 ✔️ Added Login and Signup scenes for auth module. <br />
 ✔️ Added react-navigation (navigator module). <br />
 ✔️ Added Chapter and Page scenes in chapters module. <br />
-✔️ Style App Drawer. <br />
-✔️ Add Firebase login, registration and add Redux actions (login, logout, register). <br />
-✔️ Add AsyncStorage. <br />
-✔️ Add List of Pages for Chapters and pass info from JSON file <br />
+✔️ Styled App Drawer. <br />
+✔️ Added Firebase login, registration and add Redux actions (login, logout, register). <br />
+✔️ Added AsyncStorage. <br />
+✔️ Added List of Pages for Chapters and pass info from JSON file <br />
+✔️ Added User object in Firebase database <br />
 
 ### TODO
 * Add field validation in auth module.
@@ -28,6 +29,8 @@ Basic tools:
 * Add Forgot Password scene in auth module.
 * Add username in Firebase.
 * Add user's Chapter progress in Firebase.
+* Send e-mail after registration.
+* Add animations.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br /><br />
