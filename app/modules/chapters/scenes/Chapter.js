@@ -9,7 +9,7 @@ const Chapter = ({ navigation }) => {
   const chapterId = navigation.dangerouslyGetParent().state.params.chapterId;
   const chapter = data.chapters[chapterId];
   const pages = chapter.pages;
-  const chapterLocked = store.getState().chapterReducer.user_progress.chapters;
+  const chapterLocked = store.getState().chapterReducer.chapters;
 
   if (chapterLocked[chapterId]) {
     return(

@@ -8,6 +8,8 @@ import ChapterStack from './ChaptersNavigator.js';
 import HomeStack from './HomeNavigator.js';
 import SettingsStack from './SettingsNavigator.js';
 import data from '../../assets/data.json';
+import store from '../../redux/store.js';
+const chapters = store.getState().chapterReducer.chapters;
 
 const AppDrawer = createDrawerNavigator({
   Home: {
@@ -20,21 +22,21 @@ const AppDrawer = createDrawerNavigator({
     screen: ChapterStack,
     params: {chapterId: 0},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[0].isLocked} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={chapters[0]} />),
     },
   },
   Altar: {
     screen: ChapterStack,
     params: {chapterId: 1},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[1].isLocked} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={chapters[1]} />),
     },
   },
   Divination: {
     screen: ChapterStack,
     params: {chapterId: 2},
     navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={data.chapters[2].isLocked} />),
+      drawerIcon: () => (<DrawerItemIcon isLocked={chapters[2]} />),
     },
   },
   Settings: {
