@@ -7,6 +7,7 @@ import { grid } from '../../../styles/constants.js';
 import data from '../../../assets/data.json';
 import images from '../../../assets/img/images.js';
 import { unlock } from '../actionCreators.js';
+import store from '../../../redux/store.js';
 
 class Page extends Component {
   constructor(props) {
@@ -15,8 +16,9 @@ class Page extends Component {
 
   unlockChapter = (chapters, chapterId, navigation) => {
     if (chapterId + 1 < chapters.length) {
-      chapters[chapterId+1] = false;
-      this.props.unlock(chapters);
+      const chapterUnlocked = chapterId + 1;
+      this.props.unlock(chapterUnlocked);
+      console.log(store.getState().chapterReducer.chapters)
     }
     navigation.navigate('Chapter');
   }
@@ -26,7 +28,7 @@ class Page extends Component {
     const item = navigation.getParam('item', 'Error');
     const chapterId = navigation.getParam('chapterId', 'Error');
     const chapter = data.chapters[chapterId];
-    const chapters = this.props.chapters;
+    const { chapters } = this.props;
 
     return(
       <View style={[styles.container, styles.lightBackground]}>
@@ -58,9 +60,9 @@ class Page extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-        chapters: state.chapterReducer.chapters,
-    }
+  return {
+    chapters: state.chapterReducer.chapters,
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

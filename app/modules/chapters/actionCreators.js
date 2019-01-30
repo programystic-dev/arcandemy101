@@ -1,8 +1,8 @@
 import { UNLOCKED } from './actionTypes.js';
 
-export const unlock = (chapters) => {
+export const unlock = (chapterUnlocked) => {
   return {
     type: UNLOCKED,
-    chapters
+    chapterUnlocked
   }
 }

@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
 export const initialState = {
-  chapters: [false, true, true ],
+  chapters: [ false, true, true ],
   pages: [
     [false, true, true, true],
     [false, true, true, true, true, true, true],
@@ -12,8 +12,10 @@ export const initialState = {
 const chapterReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.UNLOCKED:
-      const chapters = action.chapters;
-      return {...state, chapters }
+      const chapterUnlocked = action.chapterUnlocked;
+      const newChapters = [ ...state.chapters];
+      newChapters[chapterUnlocked] = false;
+      return {...state, chapters: newChapters}
 
     default:
       return state;
