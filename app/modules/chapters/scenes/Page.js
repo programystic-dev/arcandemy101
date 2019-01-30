@@ -18,7 +18,6 @@ class Page extends Component {
     if (chapterId + 1 < chapters.length) {
       const chapterUnlocked = chapterId + 1;
       this.props.unlock(chapterUnlocked);
-      console.log(store.getState().chapterReducer.chapters)
     }
     navigation.navigate('Chapter');
   }
