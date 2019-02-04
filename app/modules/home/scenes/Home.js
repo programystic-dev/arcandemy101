@@ -34,7 +34,7 @@ class Home extends Component {
       <View style={[styles.container, styles.lightBackground]}>
         <Image source={ this.currentPhoto(currentChapterIndex, mainImages) } style={[styles.bottomLg, styles.image]}/>
         <Text style={[styles.textColor, styles.text16, styles.bottomSm]}>Continue reading...</Text>
-        <ThemeButton onPress={() => console.log('Move to Chapter')} text={currentChapterTitle}/>
+        <ThemeButton onPress={() => navigation.navigate(currentChapterTitle)} text={currentChapterTitle}/>
       </View>
     );
   }
