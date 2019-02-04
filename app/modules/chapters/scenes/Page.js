@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Alert, Image, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
@@ -7,7 +7,6 @@ import { grid } from '../../../styles/constants.js';
 import data from '../../../assets/data.json';
 import images from '../../../assets/img/images.js';
 import { unlock } from '../actionCreators.js';
-import store from '../../../redux/store.js';
 
 class Page extends Component {
   constructor(props) {
@@ -22,6 +21,14 @@ class Page extends Component {
     navigation.navigate('Chapter');
   }
 
+  readContent = (content) => {
+    content.forEach((elem) => {
+      if (elem.hasOwnProperty('text')) {
+        return <Text>{elem.text}</Text>
+      }
+    });
+  }
+
   render() {
     const { navigation } = this.props;
     const item = navigation.getParam('item', 'Error');
@@ -34,15 +41,10 @@ class Page extends Component {
         { images[item.pageImg] != null &&
           <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
         }
+
         <Text style={[styles.textColor, styles.header1]}>{item.title}</Text>
         <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum
         </Text>
 
         { (item.id + 1) < chapter.pages.length &&
@@ -50,7 +52,16 @@ class Page extends Component {
         }
 
         { (item.id + 1) == chapter.pages.length &&
-          <ThemeButton onPress={() => this.unlockChapter(chapters, chapterId, navigation)} text='Finish Chapter' style={styles.bottomSm}/>
+          <ThemeButton
+            onPress={() => {
+              this.unlockChapter(chapters, chapterId, navigation);
+              if (chapterId < chapters.length - 1) {
+                Alert.alert('Chapter unlocked!');
+              }
+            }}
+            text='Finish Chapter'
+            style={styles.bottomSm}
+          />
         }
 
       </View>
