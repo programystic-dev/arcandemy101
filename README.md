@@ -20,12 +20,12 @@ Basic tools:
 ✔️ Added AsyncStorage. <br />
 ✔️ Added List of Pages for Chapters and pass info from JSON file <br />
 ✔️ Added User object in Firebase database <br />
+✔️ Added Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter). <br />
 
 ### TODO
 * Add field validation in auth module.
 * Add Facebook login and signup.
 * Create Navigator dynamically for Chapters.
-* Add Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter).
 * Add helpers for Pages to render JSON page content.
 * Add Forgot Password scene in auth module.
 * Add username in Firebase.
