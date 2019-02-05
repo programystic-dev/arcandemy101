@@ -12,6 +12,7 @@ import store from '../../../redux/store.js';
 class Page extends Component {
   constructor(props) {
     super(props);
+    this.scrollView = React.createRef();
   }
 
   unlockChapter = (chapters, chapterId, navigation) => {
@@ -27,12 +28,10 @@ class Page extends Component {
     this.props.unlockPage(pageData);
   }
 
-  readContent = (content) => {
-    content.forEach((elem) => {
-      if (elem.hasOwnProperty('text')) {
-        return <Text>{elem.text}</Text>
-      }
-    });
+  readContent = (elem, index) => {
+    if (elem.hasOwnProperty('text')) {
+      return (<Text key={index} style={[styles.textColor, styles.text16, {textAlign: 'center'}]}>{elem.text}</Text>);
+    }
   }
 
   render() {
@@ -42,15 +41,22 @@ class Page extends Component {
     const chapter = data.chapters[chapterId];
     const { chapters } = this.props;
     const pages = this.props.pages[chapterId];
+    const content = item.content;
+
 
     return(
-      <ScrollView style={[styles.lightBackground]}>
+      <ScrollView ref={this.scrollView} style={[styles.lightBackground]}>
         <View style={[styles.container, styles.contentContainer]}>
           { images[item.pageImg] != null &&
             <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
           }
 
           <Text style={[styles.textColor, styles.header1, {paddingLeft: grid.lg, paddingRight: grid.lg}]}>{item.title}</Text>
+          {
+            content.map((elem, index) => {
+              return this.readContent(elem, index)
+            })
+          }
           <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -62,6 +68,7 @@ class Page extends Component {
               onPress={() => {
                 navigation.navigate('Page', {item: chapter.pages[(item.id + 1)], chapterId: chapterId})
                 this.unlockPage(item.id+1, chapterId);
+                this.scrollView.current.scrollTo({x: 0, y: 0, animated: true});
               }}
               text={`Next: ${chapter.pages[(item.id + 1)].title}`}
               style={styles.bottomSm}
