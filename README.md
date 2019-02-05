@@ -22,6 +22,7 @@ Basic tools:
 ✔️ Added User object in Firebase database <br />
 ✔️ Added Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter). <br />
 ✔️ Create Navigator dynamically for Chapters. <br />
+✔️ Add animations. <br />
 
 ### TODO
 * Add field validation in auth module.
@@ -31,7 +32,6 @@ Basic tools:
 * Add username in Firebase.
 * Add user's Chapter progress in Firebase.
 * Send e-mail after registration.
-* Add animations.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br /><br />
