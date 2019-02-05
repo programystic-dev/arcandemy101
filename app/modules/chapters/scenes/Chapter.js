@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Animated, Button, FlatList, ScrollView, Text, View } from 'react-native';
-import ThemeButton from '../../../components/Button/Button.js';
+import PageTile from '../components/PageTile.js';
+//import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
 import { unlockPage } from '../actionCreators.js';
@@ -29,6 +30,7 @@ class Chapter extends Component {
     const chapterId = navigation.dangerouslyGetParent().state.params.chapterId;
     const chapter = data.chapters[chapterId];
     const pages = chapter.pages;
+    const { pagesRead } = this.props;
     let { fadeAnim } = this.state;
 
     if (this.props.chapters[chapterId]) {
@@ -44,8 +46,10 @@ class Chapter extends Component {
             <Text style={[styles.textColor, styles.header1, styles.bottomLg]}>{chapter.title}</Text>
             <FlatList
               data={pages}
+              extraData={pagesRead}
               renderItem={({item}) =>
-                <ThemeButton
+                <PageTile
+                  icon={pagesRead[chapterId][item.id]}
                   onPress={() => {
                     navigation.navigate('Page', {item: item, chapterId: chapterId});
                     this.unlockPage(item.id, chapterId);
@@ -66,6 +70,7 @@ class Chapter extends Component {
 const mapStateToProps = (state) => {
   return {
     chapters: state.chapterReducer.chapters,
+    pagesRead: state.chapterReducer.pages,
   }
 }
 
