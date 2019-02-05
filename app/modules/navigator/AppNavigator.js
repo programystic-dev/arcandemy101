@@ -10,42 +10,58 @@ import SettingsStack from './SettingsNavigator.js';
 import data from '../../assets/data.json';
 import store from '../../redux/store.js';
 
-const AppDrawer = createDrawerNavigator({
-  Home: {
-    screen: HomeStack,
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
+// Generate routes for Chapters by iterating over JSON data and adding a new property to the object
+const generateRoutes = (chapters) => {
+  const routes = {};
+
+  for (let i = 0; i < chapters.length; i++) {
+    Object.defineProperty(routes, chapters[i].title, {
+      value : {
+        screen: ChapterStack,
+        params: {chapterId: i},
+        navigationOptions: {
+          drawerIcon: () => (<DrawerItemIcon isLocked={store.getState().chapterReducer.chapters[i]} />),
+        },
+      },
+      writable : true,
+      enumerable : true,
+      configurable : true
+    });
+  }
+
+  return routes;
+}
+const chapterRoutes = generateRoutes(data.chapters);
+
+//Define routes order
+let chaptersRoutesOrder = [];
+data.chapters.filter((chapter) => chaptersRoutesOrder = [ ...chaptersRoutesOrder, chapter.title]);
+const routesOrder = ['Home', ...chaptersRoutesOrder, 'Settings'];
+
+//Define navigationOptions for basic routes and Chapters routes
+const basicNavOptions = {
+  drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
+}
+
+// Merge generated Chapters routes with basic Home and Settings routes
+const routes = {
+  ...{
+    Home: {
+      screen: HomeStack,
+      navigationOptions: basicNavOptions,
     },
-  },
-  Correspondences: {
-    screen: ChapterStack,
-    params: {chapterId: 0},
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={store.getState().chapterReducer.chapters[0]} />),
+    Settings: {
+      screen: SettingsStack,
+      navigationOptions: basicNavOptions,
     },
-  },
-  Altar: {
-    screen: ChapterStack,
-    params: {chapterId: 1},
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={store.getState().chapterReducer.chapters[1]} />),
-    },
-  },
-  Divination: {
-    screen: ChapterStack,
-    params: {chapterId: 2},
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={store.getState().chapterReducer.chapters[2]} />),
-    },
-  },
-  Settings: {
-    screen: SettingsStack,
-    navigationOptions: {
-      drawerIcon: () => (<DrawerItemIcon isLocked={false} />),
-    },
-  },
-}, {
+  }
+  , ...chapterRoutes
+};
+
+// Define App's main Drawer
+const AppDrawer = createDrawerNavigator( routes , {
   initialRouteName: 'Home',
+  order: routesOrder,
   drawerBackgroundColor: constants.colors.primary,
   contentOptions: {
     activeTintColor: '#fff',
