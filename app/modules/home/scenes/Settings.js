@@ -19,7 +19,6 @@ class Settings extends Component {
     const { navigation } = this.props;
     return(
       <View style={[styles.container, styles.lightBackground]}>
-        <Text style={[styles.textColor]}>This is a Settings page!</Text>
         <ThemeButton onPress={ () => this.handleLogout(navigation) } text="Log out"/>
       </View>
     )
