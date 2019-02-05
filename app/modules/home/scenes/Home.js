@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Image, Text, View } from 'react-native';
+import { Animated, Image, Text, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import ThemeButton from '../../../components/Button/Button.js';
 import mainImages from '../../../assets/img/mainImages.js';
@@ -9,6 +9,10 @@ import data from '../../../assets/data.json';
 class Home extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      fadeAnim: new Animated.Value(0),
+    };
   }
 
   currentChapterIndex = (chapters) => {
@@ -24,18 +28,23 @@ class Home extends Component {
     }
   }
 
+  componentDidMount() {
+    Animated.timing( this.state.fadeAnim, { toValue: 1, duration: 1000,}).start();
+  }
+
   render() {
     const { navigation } = this.props;
     const { chapters } = this.props;
     const currentChapterIndex = this.currentChapterIndex(chapters);
     const currentChapterTitle = data.chapters[currentChapterIndex].title;
+    let { fadeAnim } = this.state;
 
     return(
-      <View style={[styles.container, styles.lightBackground]}>
+      <Animated.View style={[styles.container, styles.lightBackground, {opacity: fadeAnim}]}>
         <Image source={ this.currentPhoto(currentChapterIndex, mainImages) } style={[styles.bottomLg, styles.image]}/>
         <Text style={[styles.textColor, styles.text16, styles.bottomSm]}>Continue reading...</Text>
         <ThemeButton onPress={() => navigation.navigate(currentChapterTitle)} text={currentChapterTitle}/>
-      </View>
+      </Animated.View>
     );
   }
 }

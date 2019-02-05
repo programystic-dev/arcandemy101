@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Image, ScrollView, Text, View } from 'react-native';
+import { Animated, Alert, Image, ScrollView, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
@@ -12,6 +12,10 @@ import store from '../../../redux/store.js';
 class Page extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      fadeAnim: new Animated.Value(0),
+    };
+
     this.scrollView = React.createRef();
   }
 
@@ -34,6 +38,10 @@ class Page extends Component {
     }
   }
 
+  componentDidMount() {
+    Animated.timing( this.state.fadeAnim, { toValue: 1, duration: 1000,}).start();
+  }
+
   render() {
     const { navigation } = this.props;
     const item = navigation.getParam('item', 'Error');
@@ -42,11 +50,11 @@ class Page extends Component {
     const { chapters } = this.props;
     const pages = this.props.pages[chapterId];
     const content = item.content;
-
+    let { fadeAnim } = this.state;
 
     return(
       <ScrollView ref={this.scrollView} style={[styles.lightBackground]}>
-        <View style={[styles.container, styles.contentContainer]}>
+        <Animated.View style={[styles.container, styles.contentContainer, {opacity: fadeAnim}]}>
           { images[item.pageImg] != null &&
             <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
           }
@@ -104,7 +112,7 @@ class Page extends Component {
             />
           }
 
-        </View>
+        </Animated.View>
       </ScrollView>
     );
   }

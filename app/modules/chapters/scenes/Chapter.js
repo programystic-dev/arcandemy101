@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, FlatList, ScrollView, Text, View } from 'react-native';
+import { Animated, Button, FlatList, ScrollView, Text, View } from 'react-native';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
@@ -9,6 +9,10 @@ import { unlockPage } from '../actionCreators.js';
 class Chapter extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      fadeAnim: new Animated.Value(0),
+    };
   }
 
   unlockPage = (pageId, chapterId) => {
@@ -16,22 +20,27 @@ class Chapter extends Component {
     this.props.unlockPage(pageData);
   }
 
+  componentDidMount() {
+    Animated.timing( this.state.fadeAnim, { toValue: 1, duration: 1000,}).start();
+  }
+
   render() {
     const { navigation } = this.props;
     const chapterId = navigation.dangerouslyGetParent().state.params.chapterId;
     const chapter = data.chapters[chapterId];
     const pages = chapter.pages;
+    let { fadeAnim } = this.state;
 
     if (this.props.chapters[chapterId]) {
       return(
-        <View style={[styles.container, styles.lightBackground, {paddingTop: 100}]}>
+        <Animated.View style={[styles.container, styles.lightBackground, {paddingTop: 100, opacity: fadeAnim}]}>
           <Text style={[styles.textColor, styles.header1, styles.bottomLg]}>Chapter Locked!</Text>
-        </View>
+        </Animated.View>
       );
     } else if (!this.props.chapters[chapterId]) {
       return(
         <ScrollView style={[styles.lightBackground]}>
-          <View style={[styles.container, styles.contentContainer]}>
+          <Animated.View style={[styles.container, styles.contentContainer, {opacity: fadeAnim}]}>
             <Text style={[styles.textColor, styles.header1, styles.bottomLg]}>{chapter.title}</Text>
             <FlatList
               data={pages}
@@ -47,7 +56,7 @@ class Chapter extends Component {
               }
               keyExtractor={(item) => item.id.toString()}
             />
-          </View>
+          </Animated.View>
         </ScrollView>
       );
     }
