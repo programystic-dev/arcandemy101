@@ -8,6 +8,12 @@ export default generalStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  contentContainer: {
+    paddingTop: 50,
+    paddingRight: 10,
+    paddingBottom: 50,
+    paddingLeft: 10,
+  },
   lightBackground: {
     backgroundColor: constants.colors.tertiary,
   },

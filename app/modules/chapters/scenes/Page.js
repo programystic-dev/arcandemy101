@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Image, Text, View } from 'react-native';
+import { Alert, Image, ScrollView, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
@@ -37,34 +37,37 @@ class Page extends Component {
     const { chapters } = this.props;
 
     return(
-      <View style={[styles.container, styles.lightBackground]}>
-        { images[item.pageImg] != null &&
-          <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
-        }
+      <ScrollView style={[styles.lightBackground]}>
+        <View style={[styles.container, styles.contentContainer]}>
+          { images[item.pageImg] != null &&
+            <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
+          }
 
-        <Text style={[styles.textColor, styles.header1]}>{item.title}</Text>
-        <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
-          Lorem ipsum
-        </Text>
+          <Text style={[styles.textColor, styles.header1, {paddingLeft: grid.lg, paddingRight: grid.lg}]}>{item.title}</Text>
+          <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </Text>
 
-        { (item.id + 1) < chapter.pages.length &&
-          <ThemeButton onPress={() => navigation.navigate('Page', {item: chapter.pages[(item.id + 1)], chapterId: chapterId})} text={`Next: ${chapter.pages[(item.id + 1)].title}`} style={styles.bottomSm}/>
-        }
+          { (item.id + 1) < chapter.pages.length &&
+            <ThemeButton onPress={() => navigation.navigate('Page', {item: chapter.pages[(item.id + 1)], chapterId: chapterId})} text={`Next: ${chapter.pages[(item.id + 1)].title}`} style={styles.bottomSm}/>
+          }
 
-        { (item.id + 1) == chapter.pages.length &&
-          <ThemeButton
-            onPress={() => {
-              this.unlockChapter(chapters, chapterId, navigation);
-              if (chapterId < chapters.length - 1) {
-                Alert.alert('Chapter unlocked!');
-              }
-            }}
-            text='Finish Chapter'
-            style={styles.bottomSm}
-          />
-        }
+          { (item.id + 1) == chapter.pages.length &&
+            <ThemeButton
+              onPress={() => {
+                this.unlockChapter(chapters, chapterId, navigation);
+                if (chapterId < chapters.length - 1) {
+                  Alert.alert('Chapter unlocked!');
+                }
+              }}
+              text='Finish Chapter'
+              style={styles.bottomSm}
+            />
+          }
 
-      </View>
+        </View>
+      </ScrollView>
     );
   }
 }
