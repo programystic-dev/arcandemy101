@@ -4,10 +4,16 @@ import { Button, FlatList, ScrollView, Text, View } from 'react-native';
 import ThemeButton from '../../../components/Button/Button.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
+import { unlockPage } from '../actionCreators.js';
 
 class Chapter extends Component {
   constructor(props) {
     super(props);
+  }
+
+  unlockPage = (pageId, chapterId) => {
+    const pageData = { pageId: pageId, chapterId: chapterId};
+    this.props.unlockPage(pageData);
   }
 
   render() {
@@ -29,7 +35,16 @@ class Chapter extends Component {
             <Text style={[styles.textColor, styles.header1, styles.bottomLg]}>{chapter.title}</Text>
             <FlatList
               data={pages}
-              renderItem={({item}) => <ThemeButton onPress={() => navigation.navigate('Page', {item: item, chapterId: chapterId})} text={item.title} style={styles.bottomSm}/>}
+              renderItem={({item}) =>
+                <ThemeButton
+                  onPress={() => {
+                    navigation.navigate('Page', {item: item, chapterId: chapterId});
+                    this.unlockPage(item.id, chapterId);
+                  }}
+                  text={item.title}
+                  style={styles.bottomSm}
+                />
+              }
               keyExtractor={(item) => item.id.toString()}
             />
           </View>
@@ -45,4 +60,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(Chapter);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    unlockPage: (pageId, chapterId) => {
+      dispatch(unlockPage(pageId, chapterId))
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Chapter);
