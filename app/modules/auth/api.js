@@ -1,4 +1,5 @@
 import { auth, database } from '../../config/firebase.js';
+import { initialState } from '../chapters/reducer.js';
 
 export const loginUser = (email, password) => {
   return new Promise((resolve, reject) => {
@@ -19,7 +20,7 @@ export const registerUser = (email, password) => {
   return new Promise((resolve, reject) => {
     auth.createUserWithEmailAndPassword(email, password)
       .then(resp => {
-        let user = {email, uid: resp.user.uid, test: 'test'}
+        let user = {email, uid: resp.user.uid, progress: initialState}
         createUser(user)
           .then(resolve(user))
           .catch((error) => reject({message: error}));
