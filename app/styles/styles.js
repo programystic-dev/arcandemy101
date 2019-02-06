@@ -64,6 +64,15 @@ export default generalStyles = StyleSheet.create({
   bottomLg: {
     marginBottom: constants.grid.lg,
   },
+  topSm: {
+    marginTop: constants.grid.sm,
+  },
+  topMd: {
+    marginTop: constants.grid.md,
+  },
+  topLg: {
+    marginTop: constants.grid.lg,
+  },
   //Images
   image: {
     width: 200,

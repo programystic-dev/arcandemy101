@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles.js';
-import images from '../../../assets/img/images.js';
+import images from '../../../../assets/img/images.js';
 
 const PageTile = ({ disabled, onPress, style, text, icon }) => (
   <TouchableOpacity style={[styles.tile, style]} onPress={onPress} activeOpacity={0.6}>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Animated, Button, FlatList, ScrollView, Text, View } from 'react-native';
-import PageTile from '../components/PageTile.js';
-//import ThemeButton from '../../../components/Button/Button.js';
+import PageTile from '../components/PageTile/PageTile.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
 import { unlockPage } from '../actionCreators.js';

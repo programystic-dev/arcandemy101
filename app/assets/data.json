@@ -3,21 +3,19 @@
     {
       "id": 0,
       "title": "Correspondences",
-      "isLocked": false,
       "pages" : [
         {
           "id": 0,
-          "isRead": false,
           "title": "Elements",
           "pageImg": "cauldron",
           "content": [
-            { "text": "Text 1" },
-            { "text": "Text 2"}
+            { "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+            { "image": "key" },
+            { "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
           ]
         },
         {
           "id": 1,
-          "isRead": false,
           "title": "Days",
           "pageImg": "broomstick",
           "content": [
@@ -27,7 +25,6 @@
         },
         {
           "id": 2,
-          "isRead": false,
           "title": "Colors",
           "pageImg": "broomstick",
           "content": [
@@ -37,7 +34,6 @@
         },
         {
           "id": 3,
-          "isRead": false,
           "title": "Planets",
           "pageImg": "broomstick",
           "content": [
@@ -49,11 +45,9 @@
     }, {
       "id": 1,
       "title": "Altar",
-      "isLocked": true,
       "pages": [
         {
           "id": 0,
-          "isRead": false,
           "title": "Book of Shadows",
           "content": [
             { "text": "Text 1" },
@@ -62,7 +56,6 @@
         },
         {
           "id": 1,
-          "isRead": false,
           "title": "Cauldron",
           "content": [
             { "text": "Text 1" },
@@ -71,7 +64,6 @@
         },
         {
           "id": 2,
-          "isRead": false,
           "title": "Athame",
           "content": [
             { "text": "Text 1" },
@@ -80,7 +72,6 @@
         },
         {
           "id": 3,
-          "isRead": false,
           "title": "Candle",
           "content": [
             { "text": "Text 1" },
@@ -89,7 +80,6 @@
         },
         {
           "id": 4,
-          "isRead": false,
           "title": "Wand",
           "content": [
             { "text": "Text 1" },
@@ -98,7 +88,6 @@
         },
         {
           "id": 5,
-          "isRead": false,
           "title": "Broom",
           "content": [
             { "text": "Text 1" },
@@ -107,7 +96,6 @@
         },
         {
           "id": 6,
-          "isRead": false,
           "title": "Chalice",
           "content": [
             { "text": "Text 1" },
@@ -118,11 +106,9 @@
     }, {
       "id": 2,
       "title": "Divination",
-      "isLocked": true,
       "pages": [
         {
           "id": 0,
-          "isRead": false,
           "title": "Tasseomancy",
           "content": [
             { "text": "Text 1" },
@@ -131,7 +117,6 @@
         },
         {
           "id": 1,
-          "isRead": false,
           "title": "Skrying",
           "content": [
             { "text": "Text 2.1" },
@@ -140,7 +125,6 @@
         },
         {
           "id": 2,
-          "isRead": false,
           "title": "Cartomancy",
           "content": [
             { "text": "Text 3.1" },
@@ -149,7 +133,6 @@
         },
         {
           "id": 3,
-          "isRead": false,
           "title": "Palmistry",
           "content": [
             { "text": "Text 3.1" },
@@ -158,7 +141,6 @@
         },
         {
           "id": 4,
-          "isRead": false,
           "title": "Runes",
           "content": [
             { "text": "Text 3.1" },

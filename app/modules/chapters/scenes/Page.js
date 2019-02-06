@@ -8,6 +8,7 @@ import data from '../../../assets/data.json';
 import images from '../../../assets/img/images.js';
 import { unlockChapter, unlockPage } from '../actionCreators.js';
 import store from '../../../redux/store.js';
+import { readContent } from '../helpers.js';
 
 class Page extends Component {
   constructor(props) {
@@ -32,10 +33,8 @@ class Page extends Component {
     this.props.unlockPage(pageData);
   }
 
-  readContent = (elem, index) => {
-    if (elem.hasOwnProperty('text')) {
-      return (<Text key={index} style={[styles.textColor, styles.text16, {textAlign: 'center'}]}>{elem.text}</Text>);
-    }
+  readContent = (elem, index, images, styles) => {
+    return readContent(elem, index, images, styles);
   }
 
   componentDidMount() {
@@ -59,16 +58,13 @@ class Page extends Component {
             <Image source={images[item.pageImg]} style={[styles.bottomLg, styles.image]}/>
           }
 
-          <Text style={[styles.textColor, styles.header1, {paddingLeft: grid.lg, paddingRight: grid.lg}]}>{item.title}</Text>
+          <Text style={[styles.textColor, styles.header1, styles.bottomLg, {paddingLeft: grid.lg, paddingRight: grid.lg}]}>{item.title}</Text>
+
           {
             content.map((elem, index) => {
-              return this.readContent(elem, index)
+              return this.readContent(elem, index, images, styles)
             })
           }
-          <Text style={[styles.textColor, styles.text16, {padding: grid.lg, textAlign: 'center'}]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </Text>
 
           {/* Display button to the next Page in the Chapter and mark it as isRead: true in store */}
           { (item.id + 1) < chapter.pages.length &&
@@ -79,7 +75,7 @@ class Page extends Component {
                 this.scrollView.current.scrollTo({x: 0, y: 0, animated: true});
               }}
               text={`Next: ${chapter.pages[(item.id + 1)].title}`}
-              style={styles.bottomSm}
+              style={styles.topLg}
             />
           }
 
@@ -91,7 +87,7 @@ class Page extends Component {
                 Alert.alert('You have to read all pages in this Chapter to finish it.');
               }}
               text='Finish Chapter'
-              style={styles.bottomSm}
+              style={styles.topLg}
             />
           }
 
@@ -108,7 +104,7 @@ class Page extends Component {
                 }
               }}
               text='Finish Chapter'
-              style={styles.bottomSm}
+              style={styles.topLg}
             />
           }
 
