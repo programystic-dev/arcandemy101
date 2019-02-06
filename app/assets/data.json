@@ -9,9 +9,17 @@
           "title": "Elements",
           "pageImg": "cauldron",
           "content": [
-            { "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+            { "text": "There are four elements:" },
+            { "bulletList": [ "Earth", "Air", "Fire", "Water" ]},
             { "image": "key" },
-            { "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."}
+            { "subheader": "Earth" },
+            { "styledText": "<i>Water</i> represents <b>emotions, purification, wisdom, the soul, subconscious, eternal movement, emotional aspects of love and femininity and absorption</b>. In ritual we use bowls of water, a cup or seashells to represent the element water. We might focus more on this element when casting spells for friendship, relationship, happiness and fertility."},
+            { "bulletHeaderList":
+              [
+                {"title": "Direction", "content": "North"},
+                {"title": "Colors", "content": "Black, Green, Yellow and Brown"},
+                {"title": "Ritual tools", "content": "Dirt, Leaves, Wood and Stones"}
+              ]},
           ]
         },
         {
