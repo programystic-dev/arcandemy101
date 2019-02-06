@@ -23,11 +23,11 @@ Basic tools:
 ✔️ Added Chapters logic (block next Chapter unless current is finished and change Main Altar image with every new Chapter). <br />
 ✔️ Create Navigator dynamically for Chapters. <br />
 ✔️ Add animations. <br />
+✔️ Add helpers for Pages to render JSON page content. <br />
 
 ### TODO
 * Add field validation in auth module.
 * Add Facebook login and signup.
-* Add helpers for Pages to render JSON page content.
 * Add Forgot Password scene in auth module.
 * Add username in Firebase.
 * Add user's Chapter progress in Firebase.
