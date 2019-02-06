@@ -7,13 +7,38 @@
         {
           "id": 0,
           "title": "Elements",
-          "pageImg": "cauldron",
           "content": [
             { "text": "There are four elements:" },
             { "bulletList": [ "Earth", "Air", "Fire", "Water" ]},
-            { "image": "key" },
+            { "image": "earthSign" },
             { "subheader": "Earth" },
-            { "styledText": "<i>Water</i> represents <b>emotions, purification, wisdom, the soul, subconscious, eternal movement, emotional aspects of love and femininity and absorption</b>. In ritual we use bowls of water, a cup or seashells to represent the element water. We might focus more on this element when casting spells for friendship, relationship, happiness and fertility."},
+            { "styledText": "Earth represents <b>abundance, strength, femininity, wealth, prosperity and stability</b>."},
+            { "bulletHeaderList":
+              [
+                {"title": "Direction", "content": "North"},
+                {"title": "Colors", "content": "Black, Green, Yellow and Brown"},
+                {"title": "Ritual tools", "content": "Dirt, Leaves, Wood and Stones"}
+              ]},
+            { "image": "earthSign" },
+            { "subheader": "Air" },
+            { "styledText": "Air represents our <b>mind and intelligence, psychic powers, knowledge and dreams</b>."},
+            { "bulletHeaderList":
+              [
+                {"title": "Direction", "content": "North"},
+                {"title": "Colors", "content": "Black, Green, Yellow and Brown"},
+                {"title": "Ritual tools", "content": "Dirt, Leaves, Wood and Stones"}
+              ]},
+            { "subheader": "Fire" },
+            { "styledText": "Earth represents <b>abundance, strength, femininity, wealth, prosperity and stability</b>."},
+            { "bulletHeaderList":
+              [
+                {"title": "Direction", "content": "North"},
+                {"title": "Colors", "content": "Black, Green, Yellow and Brown"},
+                {"title": "Ritual tools", "content": "Dirt, Leaves, Wood and Stones"}
+              ]},
+            { "image": "earthSign" },
+            { "subheader": "Water" },
+            { "styledText": "Air represents our <b>mind and intelligence, psychic powers, knowledge and dreams</b>."},
             { "bulletHeaderList":
               [
                 {"title": "Direction", "content": "North"},

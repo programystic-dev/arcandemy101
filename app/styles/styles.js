@@ -10,9 +10,9 @@ export default generalStyles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 50,
-    paddingRight: 10,
+    paddingRight: 40,
     paddingBottom: 50,
-    paddingLeft: 10,
+    paddingLeft: 40,
   },
   lightBackground: {
     backgroundColor: constants.colors.tertiary,
@@ -77,6 +77,10 @@ export default generalStyles = StyleSheet.create({
   image: {
     width: 200,
     height: 200,
+  },
+  imageSmall: {
+    width: 60,
+    height: 60,
   },
   //Errors
   errorMessage: {

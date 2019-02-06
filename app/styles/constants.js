@@ -21,7 +21,9 @@ export const grid = {
 };
 
 export const fonts = {
-  sm: 12,
-  md: 18,
-  lg: 28,
+  xs: 16,
+  sm: 18,
+  md: 20,
+  lg: 24,
+  xl: 28,
 };
