@@ -1,23 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
 import styles from '../../../styles/styles.js';
-import { auth } from '../../../config/firebase.js';
-import Login from './Login.js';
+import { auth, database } from '../../../config/firebase.js';
+import { getProgress } from '../../chapters/actionCreators.js';
 
 class Loading extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loading: true,
-      authenticated: false,
-    };
 
-    this.bootstrapAsync();
+    this.bootstrapAsync(auth, database);
   }
 
-  bootstrapAsync = async () => {
+  /* If user exists then get data from database and log in user */
+  getUserFromDatabase = async (auth, database) => {
+    const uid = auth.currentUser.uid;
+    const userData = await database.ref('users').child(uid).once('value');
+    return userData;
+  }
+
+  userProgressListener = async (auth, database, callback) => {
+    const uid = auth.currentUser.uid;
+    const userData = await database.ref('users').child(uid).on('value', function(snapshot) {
+      const userData = snapshot.val();
+      callback(userData.progress);
+    });
+  }
+
+  bootstrapAsync = async (auth, database) => {
     auth.onAuthStateChanged((user) => {
       if (user) {
+        /* Get user's data from database */
+        this.getUserFromDatabase(auth, database)
+          .then(snapshot => { return snapshot.val() })
+          .then((resp) => {
+            this.props.getProgress(resp.progress);
+          }).catch((error) => console.log(error));
+        this.userProgressListener(auth, database, this.props.getProgress);
         this.props.navigation.navigate('App');
       } else {
         this.props.navigation.navigate('Login');
@@ -35,4 +54,12 @@ class Loading extends Component {
   }
 }
 
-export default Loading;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProgress: (progress) => {
+      dispatch(getProgress(progress))
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Loading);

@@ -1,4 +1,4 @@
-import { CHAPTER_UNLOCKED, PAGE_UNLOCKED } from './actionTypes.js';
+import { CHAPTER_UNLOCKED, PAGE_UNLOCKED, GET_PROGRESS } from './actionTypes.js';
 
 export const unlockChapter = (chapterUnlocked) => {
   return {
@@ -11,5 +11,12 @@ export const unlockPage = (pageData) => {
   return {
     type: PAGE_UNLOCKED,
     pageData
+  }
+}
+
+export const getProgress = (progress) => {
+  return {
+    type: GET_PROGRESS,
+    progress
   }
 }

@@ -7,6 +7,7 @@ import { grid } from '../../../styles/constants.js';
 import data from '../../../assets/data.json';
 import images from '../../../assets/img/images.js';
 import { unlockChapter, unlockPage } from '../actionCreators.js';
+import { updatePages, updateChapters } from '../api.js';
 import store from '../../../redux/store.js';
 import { readContent } from '../helpers.js';
 
@@ -22,6 +23,10 @@ class Page extends Component {
 
   unlockChapter = (chapters, chapterId, navigation) => {
     if (chapterId + 1 < chapters.length) {
+      const newChapters = [ ...store.getState().chapterReducer.chapters ];
+      newChapters[chapterId + 1] = false;
+      updateChapters(newChapters);
+
       const chapterUnlocked = chapterId + 1;
       this.props.unlockChapter(chapterUnlocked);
     }
@@ -29,6 +34,10 @@ class Page extends Component {
   }
 
   unlockPage = (pageId, chapterId) => {
+    const newPages = [ ...store.getState().chapterReducer.pages];
+    newPages[chapterId][pageId] = true;
+    updatePages(newPages);
+
     const pageData = { pageId: pageId, chapterId: chapterId};
     this.props.unlockPage(pageData);
   }

@@ -27,7 +27,7 @@ class Signup extends Component {
         this.props.register(user);
       })
       .then (resp => navigation.navigate('App'))
-      .catch(error => this.setState({errorMessage: error.message, isError: true}));
+      .catch(error => this.setState({errorMessage: error.message.message, isError: true}));
   }
 
   render() {

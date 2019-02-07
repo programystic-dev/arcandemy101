@@ -28,7 +28,7 @@ class Login extends Component {
         this.props.login(user);
       })
       .then (resp => navigation.navigate('App'))
-      .catch(error => this.setState({errorMessage: error.message, isError: true}));
+      .catch(error => this.setState({errorMessage: error.message.message, isError: true}));
   }
 
   render() {
@@ -49,8 +49,8 @@ class Login extends Component {
         <ThemeButton onPress={() => this.handleLogin(email, password, navigation)} text="Login" style={{marginBottom: constants.grid.sm}} />
         <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 
-        <Text style={styles.lightTextColor}>Don't have an account?</Text>
-        <ThemeLink onPress={() => navigation.navigate('Signup')} style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
+        <Text style={styles.lightTextColor}>New to arcandemy?</Text>
+        <ThemeLink onPress={() => navigation.navigate('Signup')} text="Create a new account" style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
       </View>
     )
   }

@@ -1,7 +1,10 @@
 import * as types from './actionTypes';
 import data from '../../assets/data.json';
+import { updateChapters, updatePages } from './api.js';
+import { auth, database } from '../../config/firebase.js';
 
-//Generate initial states for Chapters and Pages based on JSON data
+/* Generate initial states for Chapters and Pages based on JSON data
+   when user register for the first time */
 const generateInitialChaptersState = (chapters) => {
   const chaptersLocked = [ false ];
   for (let i = 1; i < chapters.length; i++)  {
@@ -26,7 +29,7 @@ export const initialState = {
   pages: generateInitialPagesState(data.chapters),
 };
 
-//Create Chapters reducer
+/* Create Chapters reducer */
 const chapterReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.CHAPTER_UNLOCKED:
@@ -40,6 +43,10 @@ const chapterReducer = (state = initialState, action) => {
       const newPages = [ ...state.pages];
       newPages[chapterId][pageId] = true;
       return {...state, pages: newPages}
+
+    case types.GET_PROGRESS:
+      const progress = action.progress;
+      return {...state, chapters: progress.chapters, pages: progress.pages}
 
     default:
       return state;

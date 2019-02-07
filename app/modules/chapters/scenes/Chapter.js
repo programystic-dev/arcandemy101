@@ -5,6 +5,8 @@ import PageTile from '../components/PageTile/PageTile.js';
 import styles from '../../../styles/styles.js';
 import data from '../../../assets/data.json';
 import { unlockPage } from '../actionCreators.js';
+import { updatePages } from '../api.js';
+import store from '../../../redux/store.js';
 
 class Chapter extends Component {
   constructor(props) {
@@ -16,6 +18,10 @@ class Chapter extends Component {
   }
 
   unlockPage = (pageId, chapterId) => {
+    const newPages = [ ...store.getState().chapterReducer.pages];
+    newPages[chapterId][pageId] = true;
+    updatePages(newPages);
+
     const pageData = { pageId: pageId, chapterId: chapterId};
     this.props.unlockPage(pageData);
   }
