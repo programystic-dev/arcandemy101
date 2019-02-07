@@ -8,7 +8,6 @@ import ThemeInput from '../../../components/TextInput/TextInput.js';
 import ThemeLink from '../../../components/Link/Link.js';
 import { login } from '../actionCreators.js';
 import { loginUser } from '../api.js';
-import store from '../../../redux/store.js';
 
 class Login extends Component {
   constructor(props) {
@@ -46,7 +45,7 @@ class Login extends Component {
         {isError &&
           <Text style={styles.errorMessage}>{errorMessage}</Text>
         }
-        <Text>Is user logged in: {JSON.stringify(store.getState().isLoggedIn)}</Text>
+
         <ThemeButton onPress={() => this.handleLogin(email, password, navigation)} text="Login" style={{marginBottom: constants.grid.sm}} />
         <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
 

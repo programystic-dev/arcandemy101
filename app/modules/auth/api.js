@@ -30,11 +30,19 @@ export const registerUser = (email, password) => {
   });
 }
 
-export function createUser(user) {
+export const createUser = (user) => {
   return new Promise((resolve, reject) => {
     const userRef = database.ref().child('users');
     userRef.child(user.uid).update({...user})
       .then(() => { resolve(user); })
+      .catch((error) => reject({message: error}));
+  });
+}
+
+export const signOutUser = () => {
+  return new Promise((resolve, reject) => {
+    auth.signOut()
+      .then(() => { resolve() })
       .catch((error) => reject({message: error}));
   });
 }

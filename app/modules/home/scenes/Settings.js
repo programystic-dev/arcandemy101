@@ -4,6 +4,7 @@ import { Animated, Text, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import ThemeButton from '../../../components/Button/Button.js';
 import { logout } from '../../auth/actionCreators.js';
+import { signOutUser } from '../../auth/api.js';
 
 class Settings extends Component {
   constructor(props) {
@@ -15,8 +16,11 @@ class Settings extends Component {
   }
 
   handleLogout = (navigation) => {
-    this.props.logout();
-    navigation.navigate('Auth');
+    signOutUser()
+      .then(() => {
+        this.props.logout();
+        navigation.navigate('Auth');
+      }).catch(error => this.setState({errorMessage: error.message, isError: true}));
   }
 
   componentDidMount() {
