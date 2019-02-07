@@ -24,13 +24,12 @@ Basic tools:
 ✔️ Create Navigator dynamically for Chapters. <br />
 ✔️ Add animations. <br />
 ✔️ Add helpers for Pages to render JSON page content. <br />
+✔️ Add user's Chapter progress in Firebase - updates on many devices and updates after wifi connection loss. <br />
 
 ### TODO
-* Add field validation in auth module.
+* Add field validation in auth module (for password in Sign Up).
 * Add Facebook login and signup.
 * Add Forgot Password scene in auth module.
-* Add username in Firebase.
-* Add user's Chapter progress in Firebase.
 * Send e-mail after registration.
 
 ## Current views
