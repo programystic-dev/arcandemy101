@@ -18,6 +18,7 @@ export const loginUser = (email, password) => {
 
 export const registerUser = (email, password) => {
   return new Promise((resolve, reject) => {
+    email.toLowerCase();
     auth.createUserWithEmailAndPassword(email, password)
       .then(resp => {
         let user = {email, uid: resp.user.uid, progress: initialState}

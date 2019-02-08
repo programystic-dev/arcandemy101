@@ -14,6 +14,7 @@ Link.propTypes = {
 }
 
 Link.defaultProps = {
+  style: {},
   text: "Click me",
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TextInput } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles.js';
 
 class ThemeInput extends Component {
@@ -38,6 +39,21 @@ class ThemeInput extends Component {
       />
     )
   }
+}
+
+ThemeInput.propTypes = {
+  password: PropTypes.bool,
+  secureTextEntry: PropTypes.bool,
+  style: PropTypes.object,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+}
+
+ThemeInput.defaultProps = {
+  password: false,
+  secureTextEntry: false,
+  style: {},
+  placeholder: 'Start typing...',
 }
 
 export default ThemeInput;
