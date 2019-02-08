@@ -25,9 +25,9 @@ Basic tools:
 ✔️ Add animations. <br />
 ✔️ Add helpers for Pages to render JSON page content. <br />
 ✔️ Add user's Chapter progress in Firebase - updates on many devices and updates after wifi connection loss. <br />
+✔️ Add field validation in auth module (for password in Sign Up). <br />
 
 ### TODO
-* Add field validation in auth module (for password in Sign Up).
 * Add Facebook login and signup.
 * Add Forgot Password scene in auth module.
 * Send e-mail after registration.
