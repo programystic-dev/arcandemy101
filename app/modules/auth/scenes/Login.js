@@ -25,7 +25,10 @@ class Login extends Component {
     if (email !== '' && password !== '') {
       loginUser(email, password)
         .then( resp => {
-          let user = JSON.stringify(resp);
+          let user = {
+            email: resp.email,
+            uid: resp.uid,
+          }
           this.props.login(user);
         })
         .then (resp => navigation.navigate('App'))

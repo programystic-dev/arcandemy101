@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
 import styles from '../../../styles/styles.js';
 import { auth, database } from '../../../config/firebase.js';
+import { login } from '../actionCreators.js';
 import { getProgress } from '../../chapters/actionCreators.js';
 
 class Loading extends Component {
@@ -34,6 +35,7 @@ class Loading extends Component {
         this.getUserFromDatabase(auth, database)
           .then(snapshot => { return snapshot.val() })
           .then((resp) => {
+            this.props.login({email: resp.email.toLowerCase(), uid: resp.uid});
             this.props.getProgress(resp.progress);
           }).catch((error) => console.log(error));
         this.userProgressListener(auth, database, this.props.getProgress);
@@ -58,6 +60,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getProgress: (progress) => {
       dispatch(getProgress(progress))
+    },
+    login: (user) => {
+      dispatch(login(user))
     }
   };
 };

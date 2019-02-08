@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Animated, Text, View } from 'react-native';
+import { Animated, View } from 'react-native';
+import StyledText from 'react-native-styled-text';
 import styles from '../../../styles/styles.js';
 import ThemeButton from '../../../components/Button/Button.js';
 import { logout } from '../../auth/actionCreators.js';
@@ -28,16 +29,26 @@ class Settings extends Component {
   }
 
   render() {
-    const { navigation } = this.props;
+    const { navigation, userData } = this.props;
     let { fadeAnim } = this.state;
 
     return(
-      <Animated.View style={[styles.container, styles.lightBackground, {opacity: fadeAnim}]}>
+      <Animated.View style={[styles.container, styles.contentContainer, styles.lightBackground, {opacity: fadeAnim}]}>
+        <StyledText
+          style={[styles.textColor, styles.text16, styles.bottomMd, { textAlign: 'center' }]}
+          text={`You are logged in as <b>${userData.user !== null ? userData.user.email : 'ERROR' }</b>`}
+        />
         <ThemeButton onPress={ () => this.handleLogout(navigation) } text="Log out"/>
       </Animated.View>
     )
   }
 
+}
+
+const mapStateToProps = (state) => {
+  return {
+    userData: state.authReducer,
+  }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -48,4 +59,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);
