@@ -64,11 +64,24 @@ class Login extends Component {
           <Text style={styles.errorMessage}>{errorMessage}</Text>
         }
 
-        <ThemeButton onPress={() => this.handleLogin(email, password, navigation)} text="Login" style={{marginBottom: constants.grid.sm}} />
-        <ThemeButton onPress={() => navigation.navigate('App')} theme="facebook" text="Login with Facebook" style={{marginBottom: constants.grid.sm}}/>
+        <ThemeButton
+          onPress={() => this.handleLogin(email, password, navigation)}
+          style={{marginBottom: constants.grid.sm}}
+          text="Login"
+        />
+        <ThemeButton
+          onPress={() => navigation.navigate('App')}
+          style={{marginBottom: constants.grid.sm}}
+          text="Login with Facebook"
+          theme="facebook"
+        />
 
         <Text style={styles.lightTextColor}>New to arcandemy?</Text>
-        <ThemeLink onPress={() => navigation.navigate('Signup')} text="Create a new account" style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]} />
+        <ThemeLink
+          onPress={() => navigation.navigate('Signup')}
+          style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]}
+          text="Create a new account"
+        />
       </View>
     )
   }
