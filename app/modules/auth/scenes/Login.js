@@ -40,11 +40,16 @@ class Login extends Component {
 
   render() {
     const { navigation } = this.props;
+    const resetPassword = navigation.getParam('resetPassword', false);
     const { email, errorMessage, isError, password } = this.state;
 
     return(
       <View style={[styles.container, styles.darkBackground]}>
         <Image source={require('../../../assets/img/logo.png')} style={{width: 50, height: 50, marginBottom: constants.grid.md}} />
+
+        { resetPassword &&
+          <Text style={styles.errorMessage}>E-mail sent. Go check your mail and follow instructions.</Text>
+        }
 
         <ThemeInput
           onChangeText={(email) => this.setState({email})}
@@ -79,8 +84,14 @@ class Login extends Component {
         <Text style={styles.lightTextColor}>New to arcandemy?</Text>
         <ThemeLink
           onPress={() => navigation.navigate('Signup')}
-          style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]}
+          style={[styles.lightTextColor, styles.underlineText, styles.boldText, styles.bottomSm, {lineHeight: 30}]}
           text="Create a new account"
+        />
+
+        <ThemeLink
+          onPress={() => navigation.navigate('Forgot')}
+          style={[styles.lightTextColor, styles.underlineText, styles.boldText, {lineHeight: 30}]}
+          text="Forgot password"
         />
       </View>
     )

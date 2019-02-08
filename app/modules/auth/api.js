@@ -52,3 +52,14 @@ export const signOutUser = () => {
       .catch((error) => reject({message: error}));
   });
 }
+
+export const resetPassword = (email) => {
+  email.toLowerCase();
+  return new Promise((resolve, reject) => {
+    auth.sendPasswordResetEmail(email).then(() => {
+      resolve();
+    }).catch((error) => {
+      reject(error)
+    });
+  });
+}

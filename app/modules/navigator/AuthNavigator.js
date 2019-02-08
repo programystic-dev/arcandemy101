@@ -4,6 +4,7 @@ import * as constants from '../../styles/constants.js';
 
 import LoadingScreen from '../auth/scenes/Loading.js';
 import LoginScreen from '../auth/scenes/Login.js';
+import ForgotScreen from '../auth/scenes/Forgot.js';
 import SignupScreen from '../auth/scenes/Signup.js';
 
 const AuthStack = createStackNavigator({
@@ -21,6 +22,12 @@ const AuthStack = createStackNavigator({
     screen: SignupScreen,
     navigationOptions: {
       title: 'Sign up',
+    },
+  },
+  Forgot: {
+    screen: ForgotScreen,
+    navigationOptions: {
+      title: 'Forgot password',
     },
   },
 }, {

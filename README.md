@@ -27,10 +27,12 @@ Basic tools:
 ✔️ Add user's Chapter progress in Firebase - updates on many devices and updates after wifi connection loss. <br />
 ✔️ Add field validation in auth module (for password in Sign Up). <br />
 ✔️ Send e-mail verification after registration. <br />
+✔️ Add Forgot Password scene in auth module. <br />
 
 ### TODO
-* Add Facebook login and signup.
-* Add Forgot Password scene in auth module.
+* Remove Expo
+* Add Facebook login with Facebook SDK
+* Publish app in stores
 
 ## Current views
 ![Login and registration](./assets/01.png) <br /><br />
