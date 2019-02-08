@@ -21,6 +21,11 @@ export const registerUser = (email, password) => {
     email.toLowerCase();
     auth.createUserWithEmailAndPassword(email, password)
       .then(resp => {
+        if(resp.user && resp.user.emailVerified === false) {
+          resp.user.sendEmailVerification();
+        }
+        return resp;
+      }).then(resp => {
         let user = {email, uid: resp.user.uid, progress: initialState}
         createUser(user)
           .then(resolve(user))
