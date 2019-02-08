@@ -26,11 +26,11 @@ Basic tools:
 ✔️ Add helpers for Pages to render JSON page content. <br />
 ✔️ Add user's Chapter progress in Firebase - updates on many devices and updates after wifi connection loss. <br />
 ✔️ Add field validation in auth module (for password in Sign Up). <br />
+✔️ Send e-mail verification after registration. <br />
 
 ### TODO
 * Add Facebook login and signup.
 * Add Forgot Password scene in auth module.
-* Send e-mail after registration.
 
 ## Current views
 ![Login and registration](./assets/1.png) <br /><br />
