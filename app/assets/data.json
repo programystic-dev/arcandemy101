@@ -6,18 +6,34 @@
       "pages" : [
         {
           "id": 0,
+          "title": "Intro",
+          "content": [
+            { "text": "Correspondence plays a very important role in rituals and spells. Thanks to them, we manifest what we want to achieve and to what our intentions are related to." },
+            { "text": "For example, if we want to perform a spell for luck, we will symbolically use tools that associate with it (clover, basil, green or gold candle, thursday). Well-chosen ritual tools or spell components increase its power and effectiveness (affecting both us and the universe)."},
+            { "text": "Always use correspondences that speak to you and are available to you. If you can not easily get an ingredient, try to think for a moment about how you can replace it with something that is within your reach." },
+            { "text": "On next pages you’ll find some popular correspondences briefly explained. Those are not all possible correspondences and there are many more! Try to find some additional information and put it in your Book of Shadows! However once you learn basics, you’ll be able to use them to your own needs in a sufficient way." },
+          ]
+        },
+        {
+          "id": 1,
           "title": "Elements",
           "content": [
             { "text": "There are four elements:" },
             { "bulletList": [ "Earth", "Air", "Fire", "Water" ]},
             { "image": "earthSign" },
             { "subheader": "Earth" },
-            { "styledText": "Earth represents <b>abundance, strength, femininity, wealth, prosperity and stability</b>."},
+            { "styledText": "The Earth represents <b>wealth, prosperity, abundance, femininity, healing, grounding and stability</b>. Example: you can use this element in a prosperity spell. Put a coin in the ground in your garden and plant a tree there. As it grows, so your wealth!"},
             { "bulletHeaderList":
               [
                 {"title": "Direction", "content": "North"},
-                {"title": "Colors", "content": "Black, Green, Yellow and Brown"},
-                {"title": "Ritual tools", "content": "Dirt, Leaves, Wood and Stones"}
+                {"title": "Gender", "content": "Feminine"},
+                {"title": "Season", "content": "Winter"},
+                {"title": "Time", "content": "Midnight"},
+                {"title": "Zodiac", "content": "Taurus, Virgo, Capricorn"},
+                {"title": "Planets", "content": "Venus, Saturn"},
+                {"title": "Tarot", "content": "Pentacles"},
+                {"title": "Colors", "content": "Green, Brown, Yellow and Black"},
+                {"title": "Ritual tools", "content": "Wood, Stones, Plants"}
               ]},
             { "image": "earthSign" },
             { "subheader": "Air" },
@@ -48,7 +64,7 @@
           ]
         },
         {
-          "id": 1,
+          "id": 2,
           "title": "Days",
           "pageImg": "broomstick",
           "content": [
@@ -57,7 +73,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": 3,
           "title": "Colors",
           "pageImg": "broomstick",
           "content": [
@@ -66,7 +82,7 @@
           ]
         },
         {
-          "id": 3,
+          "id": 4,
           "title": "Planets",
           "pageImg": "broomstick",
           "content": [
